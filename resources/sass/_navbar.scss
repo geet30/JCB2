@@ -1,0 +1,543 @@
+html {
+    height: 100%;
+    font-family: Lato !important;
+}
+#SiteNavbar {
+    color: #363636;
+    // position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1;
+    // border-bottom: 1px solid $gray;
+    .navbar {
+        // background: transparent linear-gradient(119deg, #B7FFBBC0 0%, #e2eff7c0 100%) 0% 0% no-repeat padding-box;
+        // opacity: 0.75;
+        // D0D9FFC0 -- original gradient end value
+        padding: 0;
+        border-bottom: 0.5px solid #70707080;
+    }
+    .navbar-collapse {
+        justify-content: space-between;
+        height: $navHeight;
+        position: fixed;
+    width: 100%;
+    top: 0;
+    border-bottom: 1px solid #98b99b;
+    background: linear-gradient( 
+119deg
+ , #B7FFBBC0 0%, #D0D9FFC0 100%) 0% 0% no-repeat padding-box;
+    }
+    .navbar-userinfo {
+        display: flex;
+        z-index: 1;
+        .logo-wrapper{
+            margin-left: 10px;
+            padding: 2px;
+            @media(max-width: 1024px){
+                padding: 0px;
+            }
+            img {
+                // margin: 0 20px;
+                width: 40px;
+                height: 40px;
+                @media(max-width: 1024px){
+                    width: 35px;
+                    height: 35px;
+                }
+                border-radius: 50%;
+            }
+        }
+        .navbar-username {
+            
+            letter-spacing: 0.19px;
+            color: #363636;
+            align-items: center;
+            display: flex;
+            font-weight: 800;
+            font-size: 25px;
+            font: normal normal 800 25px/48px Lato;
+            @media(max-width:1024px){
+                font-size: 19px;
+            }
+            .drop-down {
+                cursor: pointer;
+            }
+            .dropdown-action-menu {
+                padding: 24px 34px;
+                position: fixed;
+                top: $navHeight + 1;
+                left: 71px;
+                width: calc(100vw - 71px);
+                // height: calc(100vh - #{$navHeight + 1});
+                height: auto;
+                background: #fff;
+                
+                height: calc(100% - 102px);
+                overflow: scroll;
+                .dropDownMenu-header {
+                    
+                    letter-spacing: 0.27px;
+                    color: #363636;
+                    div:first-child {
+                        float: left;
+                        span {
+                            text-decoration: underline;
+                            font-size: 30px;
+                        }
+                    }
+                    .close {
+                        float: right;
+                        cursor: pointer;
+                    }
+                }
+                .content {
+                        margin-top: 90px;
+                    cursor: pointer;
+                    div.content-row {
+                        margin-top: 5px;
+                        letter-spacing: 0.27px;
+                        position: relative;
+                        font-size: 25px !important;
+                        font-weight: 400 !important;
+                        .unset-default-btn {
+                            position: absolute;
+                            right: 0;
+                            bottom: 0;
+                            width: unset !important;
+                            padding: 0 2rem;
+                            font: normal normal bold 20px/24px Lato;
+
+                        }
+                    }
+                    .card-info{
+                        border: 1px solid grey;
+                        margin-bottom: 1rem;
+                        &.selected {
+                            // border-color: red;
+                            box-shadow: 0px 10px 20px grey;
+                        }
+                        .card-content {
+                            padding: 1rem;
+                            .card-last-4number{
+                                font: normal normal bold 28px/40px Neuzeit Grotesk;
+                                letter-spacing: 0.22px;
+                                color: #363636;
+                            }
+                            .card-expire {
+                                font: normal normal normal 20px/24px Neuzeit Grotesk;
+                                letter-spacing: 0.16px;
+                                color: #6D7A87;
+                            }
+                        }
+                        .card-action{
+                            padding: 1rem;
+                            text-align: right;
+                            .card-action-btn {
+                                font: normal normal bold 24px/28px Neuzeit Grotesk;
+                                letter-spacing: 0.22px;
+                                color: #30ABE8;
+                                border: 0;
+                                background-color: transparent;
+                                &:focus {
+                                    outline: unset;
+                                }
+                            }
+                        }
+                        .card-divider {
+                            margin: 0;
+                            border-top: 1px solid grey;
+                        }
+                    }
+                    .add-card {
+                        width: 100%;
+                        padding: 4.3rem 0;
+                        border: 1px dashed grey;
+                        cursor: pointer;
+                    }
+                    .payment-editing {
+                        border: 1px solid grey;
+                        padding: 2rem;
+
+                        .item-label {
+                            font: normal normal normal 18px/22px Lato;
+                            color: #1a1738;
+                            margin-top: 1rem;
+                        }
+                        .item-value {
+                            font-size: 14px;
+                            border: none;
+                            border-bottom: 1px solid #269A8E;
+                            padding: 0;
+                            outline: none;
+                            width: 100%;
+                            font: normal normal normal 16px/20px Lato;
+                            letter-spacing: 0px;
+                            color: #363636;
+                            // background: #e3e3e3;
+                            padding-left: 2px;
+                            &::-webkit-input-placeholder {
+                                color: #B9B9B9;
+                            }
+                        }
+
+                        .stripe-elements-error-message-div {
+                            font: normal normal normal 14px/17px Neuzeit Grotesk
+                        }
+                    }
+                    .card-placeholder-image {
+                        border: 1px solid grey;
+                        padding: 1rem 2rem;
+                        width: fit-content;
+                    }
+                    .markup-default {
+                        position: absolute;
+                        font-size: 0.75rem;
+                        background-color: #B7FFBB;
+                        padding: 0 0.5rem;
+                        right: 0;
+                        top: 8px;
+                        color: #035781;
+                        border: 1px solid #B7FFBB;
+                    }
+                }
+                .signout {
+                    position: absolute;
+                    bottom: 50px;
+                    right: 50px;
+                   
+                    letter-spacing: 0.27px;
+                    color: #FF7777;
+                    cursor: pointer;
+                    .cancel-button {
+                        color: #000 !important;
+                        background-color: #ccc;
+                        border-color: transparent;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-nav {
+        position: absolute;
+        // justify-content: center;
+        // height: 100%;
+        padding: 5px 0;
+        // width: 100%;
+        // width: calc(100% - 470px);
+        width: 100%;
+        // left: 470px;
+        // z-index: -1;
+        .nav-wrapper{
+            text-align: center;
+            margin: auto;
+        }
+        .nav-link {
+            // height: $navHeight;
+            
+            letter-spacing: 0.19px;
+            color: #363636;
+            padding-left: 28px;
+            padding-right: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            float: left;
+            font-weight: 300;
+            font-size: 21px;
+            @media(max-width:1024px){
+                font-size: 20px;
+            }
+            &.active {
+                // background: #31AEED 0% 0% no-repeat padding-box;
+                // color: #FFFFFF;
+                font-size: 21px;
+                letter-spacing: 0.19px;
+                color: #363636;
+                border: 2px solid #707070;
+                border-radius: 25px;
+                font-weight: bold;
+                font: normal normal 800 21px/48px Lato;
+                padding: 1px 33px;
+                @media(max-width:1024px){
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    .sub-m {
+        font-size: 30px;
+        font-weight: 700;
+    }
+    .navbar-notification {
+        margin-right: 20px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 10px 10px #00000029;
+        font-size: 29px;
+        width: 52px;
+        height: 52px;
+        text-align: center;
+        border-radius: 50%;
+        padding: 9px;
+        z-index: 1;
+    }
+    .navbar-action {
+        button {
+            margin:0 20px;
+            font: normal normal bold 24px/34px Lato;
+            background: #FFFFFF 0% 0% no-repeat padding-box;
+            box-shadow: 0px 10px 10px #00000026;
+            border: 1px solid #2580EC;
+            border-radius: 10px;
+            width: 200px;
+            letter-spacing: 0.19px;
+            color: #31AEED;
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .navbar-mobile {
+        .navbar-mobile-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        img.user-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            margin: 10px;
+            box-shadow: 0px 2px 5px 3px #00000029;
+        }
+        .nav-mobile-title {
+            font: normal normal bold 28px/34px Lato;
+            letter-spacing: 0.19px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-mobile-menu {
+            border-radius: 50%;
+            margin: 10px;
+            background: white;
+            box-shadow: 0px 2px 5px 3px #00000029;
+            padding: 0;
+            outline: none;
+            span {
+                font-size: 28px;
+                margin: 10px;
+                color: #363636;
+            }
+        }
+        #navbar-toggle-collapse {
+            border-bottom: 1px solid $blue;
+        }
+        .nav-item {
+            .nav-link {
+                font-size: 16px;
+                height: 50px;
+                width: 100%;
+                border-top: 1px solid $blue;
+            }
+            &.active {
+                background: #31AEED 0% 0% no-repeat padding-box;
+                .nav-link {
+                    color: #FFFFFF;
+                }
+            }
+        }
+    }
+    .display-flex {
+        display: flex;
+    }
+    .profile-wrapper {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #707070;
+        padding: 50px;
+        .main-row{
+            @media(max-width: 1280px){
+                display: block !important;
+            }
+        }
+        .profile-col{
+            @media(max-width: 1280px){
+                max-width: 100% !important;
+            }
+        }
+        .addr{
+            @media(max-width: 1280px){
+                max-width: 100% !important;
+            }
+        }
+
+    }
+    .input-label{
+        width: 100%;
+        color: #6D7A87;
+        font-size: 16px;
+        margin-bottom: 0px;
+        font-weight: 300;
+    }
+    input.input {
+        border: 0;
+        
+        letter-spacing: 0.16px;
+        color: #30ABE8;
+        border-bottom: 2px solid #c2efd7;
+        outline: none;
+        margin-bottom: 0px;
+        width: 90%;
+        font-size: 18px;
+        font-weight: 500;
+        &::-webkit-input-placeholder {
+            color: #363636;
+        }
+    }
+    div.input {
+        border: 0;
+        font-size: 18px;
+        letter-spacing: 0.16px;
+        color: #30ABE8;
+        border-bottom: 2px solid #c2efd7;
+        outline: none;
+        min-width: 357px;
+        float: left;
+    }
+    .my-loc-input{
+        min-width: 280px !important;
+    }
+    .edit-profile {
+        text-align: center;
+        margin-top: 2rem;
+        a {
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: underline;
+            color: #30abe8;
+        }
+    }
+
+    .profile_wrapper {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: #C9C0C0;
+        background-position: center;
+        background-size: cover;
+        margin: 0 auto;
+        padding-top: 200px;
+        letter-spacing: 0.22px;
+        color: #E6E6E6;
+        cursor: pointer;
+        div{
+            margin: 0 auto;
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+    .profile_uploader {
+        visibility: hidden;
+        position: absolute;
+    }
+    .accountActionBtn {
+        margin-top: 100px;
+        width: 100%;
+        text-align: right;
+    }
+    .new-address{
+        p{
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+    .address-add {
+        position: absolute;
+        width: 100%;
+        top: 3px;
+        @media(max-width: 1280px){
+            position: unset;
+        }
+    }
+    .tabs-component-tabs {
+        list-style: none;
+        float: unset;
+        width: 100%;
+        display: flex;
+        margin-bottom: 0;
+        li {
+            float: left;
+            padding-top: 10px;
+            background-color: #E4E4E4;
+            // min-width: 33%;
+            a {
+                
+                letter-spacing: 0.16px;
+                color: #fff;
+                padding: 2rem 5rem;
+                font-size: 20px;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+            &.is-active {
+                background-color: #30ABE8;
+                padding: 7px 0px;
+                a {
+                    color: #ffff;
+                    font-size: 20px;
+                }
+            }
+            // &:last-child {
+            //     float: none;
+            // }
+        }
+    }
+    // section#primary-address .address_form {
+    //   width: 100% !important;
+    // }
+    // section#address2 .address_form {
+    //   width: 85%;
+    // }
+    .address_form {
+        padding: 2rem;
+        border: 1px solid #707070;
+        max-width: 100%;
+        input {
+            margin-bottom: 0;
+            color: #30ABE8;
+            border-bottom: 2px solid #c2efd7;
+            
+        }
+        .form-group {
+            margin-bottom: 0;
+        }
+        button.address-btn {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}
+.profile-col{
+    label{
+        font-size: 12px;
+    }
+}
+.detail-address{
+    .nav-pills{
+        justify-content: flex-end;
+        li{
+            border: 1px solid #CCCFD4;
+            padding: 0px 9px;
+            a{
+                font-size: 16px;
+                color: #929ca6;
+                font-weight: 400;
+            }
+        }
+    }
+}
